@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>سوبر تون - Super Ton</title>
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="superton-logo.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="superton-logo.png">
+  <meta name="theme-color" content="#0098ff">
+
+  <!-- Canonical & Description -->
+  <link rel="canonical" href="https://superton.kesug.com/">
+  <meta name="description" content="سوبر تون: منصة عربية للبيع والشراء عبر وسيط معتمد لضمان حق الطرفين. قنوات الثقة، الجروبات، الوسطاء والمالكين.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://superton.kesug.com/">
+  <meta property="og:title" content="سوبر تون - Super Ton">
+  <meta property="og:description" content="منصة عربية للبيع والشراء عبر وسيط معتمد لضمان حق الطرفين.">
+  <meta property="og:image" content="https://superton.kesug.com/superton-logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="سوبر تون - Super Ton">
+  <meta name="twitter:description" content="منصة عربية للبيع والشراء عبر وسيط معتمد لضمان حق الطرفين.">
+  <meta name="twitter:image" content="https://superton.kesug.com/superton-logo.png">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Super Ton",
+    "url": "https://superton.kesug.com/",
+    "logo": "https://superton.kesug.com/superton-logo.png",
+    "sameAs": [
+      "https://t.me/Tooon_Ch",
+      "https://t.me/Super_Tooon"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Super Ton",
+    "url": "https://superton.kesug.com/"
+  }
+  </script>
+
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700&display=swap');
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:'Tajawal',sans-serif;
+  color:#fff;
+  background:url('super.png') center/cover no-repeat fixed;
+  min-height:100svh;
+  overflow:hidden;
+  animation: moveBg 20s ease-in-out infinite alternate;
+}
+@keyframes moveBg {
+  0% { background-position: 50% 50%; }
+  25% { background-position: 52% 48%; }
+  50% { background-position: 49% 52%; }
+  75% { background-position: 51% 49%; }
+  100% { background-position: 50% 50%; }
+}
+.wave-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.wave-bg svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  animation: waveMove 14s linear infinite;
+}
+
+@keyframes waveMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.overlay{
+  position:fixed; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(130deg, rgba(0,40,120,.35), rgba(0,15,50,.55));
+  backdrop-filter: blur(3px);
+}
+.wrapper{
+  position:relative; z-index:2;
+  display:grid; place-items:center;
+  min-height:100svh; padding: clamp(12px, 2vh, 22px);
+  overflow-y:auto;
+}
+.content{
+  width:min(92%, 820px);
+  text-align:center;
+  padding: 12px 10px 86px;
+  margin-inline:auto;
+  opacity:0; transform:translateY(30px);
+  animation: fadeRise 1s ease forwards;
+}
+@keyframes fadeRise{
+  to{opacity:1; transform:translateY(0);}
+}
+.logo-wrap{
+  width:128px; height:128px; margin:10px auto 12px; position:relative; border-radius:50%;
+  background: radial-gradient(120% 120% at 30% 20%, rgba(0,180,255,.92), rgba(0,110,220,.96));
+  box-shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 4px 12px rgba(255,255,255,.25);
+  display:grid; place-items:center; overflow:hidden;
+  animation: pulse 1.2s ease 0.5s 1;
+}
+.logo-wrap img{ width:66%; height:66%; object-fit:contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,.35)); }
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+h1{font-size:clamp(2rem,5.2vw,3.2rem);margin:.15em 0 .25em;text-shadow:0 2px 8px rgba(0,0,0,.6);}
+h2{color:#d9ecff;font-weight:500;margin:0 0 1.5em;text-shadow:0 2px 8px rgba(0,0,0,.55);}
+.icon{width:24px;height:24px;vertical-align:middle;margin-right:6px;}
+.btn{
+  display:block;width:min(360px,90%);margin:10px auto;
+  padding:14px 22px;font-size:1.12rem;color:#fff;cursor:pointer;
+  border-radius:12px;border:1px solid rgba(255,255,255,.28);
+  background:rgba(255,255,255,.12);backdrop-filter:blur(8px);
+  box-shadow:0 10px 26px rgba(0,0,0,.25);
+  transition:all .25s ease;
+}
+.btn:hover{
+  transform:translateY(-2px) scale(1.02);
+  background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.45);
+  box-shadow:0 14px 30px rgba(0,0,0,.3),0 0 18px rgba(0,180,255,.25);
+}
+a.btn, button.btn {
+  font-family: 'Tajawal', sans-serif;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.4;
+}
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+  animation: shineMove 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shineMove {
+  0%, 60% { left: -120%; opacity: 0; }
+  70% { opacity: 1; }
+  100% { left: 130%; opacity: 0; }
+}
+.footer{
+  position:fixed;
+  left:0; right:0; bottom:10px;
+  z-index:3;
+  text-align:center;
+  color:rgba(255,255,255,.65);
+  font-size:.92rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.footer * {
+  pointer-events:auto;
+}
+
+.mode-toggle {
+  background: rgba(255,255,255,.2);
+  border: none;
+  color: #fff;
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+  white-space: nowrap;
+}
+.mode-toggle:hover {
+  background: rgba(255,255,255,.35);
+  transform: scale(1.08);
+}
+/* النمط الليلي */
+body.dark {
+  background: url('super.png') center/cover no-repeat fixed;
+  filter: brightness(0.55) contrast(1.1);
+}
+body.dark .overlay {
+  background: linear-gradient(130deg, rgba(0,0,0,.55), rgba(0,0,0,.7));
+}
+body.dark .btn {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.2);
+  color: #cfeaff;
+}
+body.dark .btn:hover {
+  background: rgba(255,255,255,.15);
+  box-shadow: 0 0 20px rgba(0,150,255,.3);
+}
+body.dark .footer {
+  color: rgba(255,255,255,.5);
+}
+@media(max-width:600px){.btn{width:86%;font-size:1.04rem}}
+
+/* ❄️ تأثير سقوط رموز TON 💎 */
+.ton-snow {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+.ton {
+  position: absolute;
+  top: -10px;
+  color: #00baff;
+  text-shadow: 0 0 10px rgba(0,180,255,0.8);
+  animation: tonFall linear forwards;
+}
+@keyframes tonFall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+body.dark .ton {
+  color: #bde4ff;
+  text-shadow: 0 0 8px rgba(200,240,255,0.6);
+}
+/* 🧭 القائمة العلوية */
+.menu {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 10;
+}
+
+.menu-toggle {
+  background: rgba(255,255,255,.2);
+  color: #fff;
+  border: none;
+  font-size: 1.6rem;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all .3s ease;
+}
+.menu-toggle:hover {
+  background: rgba(255,255,255,.3);
+}
+
+.menu-content {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  background: rgba(0,0,30,.65);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  display: none;
+  flex-direction: column;
+  min-width: 200px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.3);
+}
+.menu-content.active {
+  display: flex;
+  animation: fadeIn .25s ease;
+}
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-8px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.menu-item {
+  background: transparent;
+  color: #fff;
+  border: none;
+  text-align: right;
+  padding: 10px 16px;
+  font-family: 'Tajawal', sans-serif;
+  cursor: pointer;
+  transition: background .3s;
+  text-decoration: none;
+  display: block;
+}
+.menu-item:hover {
+  background: rgba(255,255,255,.15);
+}
+
+.menu-divider {
+  height: 1px;
+  background: rgba(255,255,255,.15);
+  margin: 4px 0;
+}
+
+/* الوضع الليلي للقائمة */
+body.dark .menu-content {
+  background: rgba(255,255,255,.1);
+}
+/* 🔔 Popup notification */
+.popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(0,0,30,0.75);
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  backdrop-filter: blur(8px);
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all .5s ease;
+}
+.popup.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+body.dark .popup {
+  background: rgba(255,255,255,0.1);
+  color: #dfeaff;
+}
+.about-content {
+  background: #111; /* نفس درجة الخلفية الداكنة للموقع */
+  color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.3s ease-in-out;
+  border: 1px solid #333; /* لمسة ناعمة تفصل المحتوى عن الخلفية */
+}
+.about-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center; /* توسيط أفقي */
+  align-items: center; /* توسيط عمودي */
+  z-index: 999;
+}
+
+.about-content h2 {
+  color: #7cc9ff; /* لون أزرق فاتح جميل للعنوان */
+  text-shadow: 0 0 8px rgba(124, 201, 255, 0.5);
+}
+
+.about-content p {
+  line-height: 1.6;
+}
+
+.about-content button {
+  margin-top: 15px;
+  background: #222;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.about-content button:hover {
+  background: #333;
+  border-color: #666;
+}
+
+</style>
+</head>
+<body>
+<!-- 📱 القائمة العلوية -->
+<div class="menu">
+<div class="popup" id="popup"></div>
+  <button class="menu-toggle">☰</button>
+  <div class="menu-content" id="menu">
+    <button class="menu-item mode-toggle" data-i18n="menu.dark">Dark Mode</button>
+    <button class="menu-item" id="about-btn" data-i18n="menu.about">ℹ️ عنا / About</button>
+    <div class="menu-divider"></div>
+    <div class="menu-item language-dropdown" id="lang-menu">
+      🌐 <span data-i18n="menu.language">اللغة / Language</span>
+      <div class="submenu">
+        <button class="menu-item" id="lang-ar">🇪🇬 العربية</button>
+        <button class="menu-item" id="lang-en">🇺🇸 English</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="about-popup" class="about-popup">
+  <div class="about-content">
+    <h2>سوبر تون | Super Ton</h2>
+    <p>منصة مصرية عربية للبيع والشراء <b>عبر الانترنت</b> بأمان وسهولة، بإدارة <b>مازن ياسر</b>.</p>
+    <p>الكلمات المفتاحية: سوبر تون، Super Ton، مزاد تون، Auction Ton، مازن ياسر، Mazen Yasser، Toncoin، وسطاء تون.</p>
+    <button id="close-about">إغلاق</button>
+  </div>
+</div>
+<style>
+/* ⚙️ تحسين التجاوب لجميع الشاشات */
+html {
+  font-size: clamp(14px, 1.5vw, 18px);
+}
+
+body {
+  overflow-y: auto; /* السماح بالتمرير عند الطول الكبير */
+  overflow-x: hidden;
+}
+
+/* العناوين */
+h1 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  margin: 10px 0;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+  margin: 8px 0 20px;
+}
+
+/* الأزرار */
+.btn {
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  padding: clamp(10px, 1.5vw, 16px) clamp(16px, 2vw, 24px);
+  width: min(360px, 90%);
+  margin: 10px auto;
+}
+
+/* المسافات داخل الصفحة */
+.wrapper {
+  padding: clamp(10px, 2vh, 24px);
+}
+
+/* تعديل عنوان "الوُسطاء المعتمدون" ليبقى متناسق */
+h1, h2, .title {
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* لأجهزة الموبايل الصغيرة جدًا */
+@media (max-width: 400px) {
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.1rem; }
+  .btn { font-size: 0.95rem; padding: 10px 14px; }
+}
+
+.language-dropdown {
+  position: relative;
+}
+.language-dropdown .submenu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: rgba(0,0,30,.75);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  min-width: 150px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.3);
+}
+.language-dropdown:hover .submenu,
+.language-dropdown.active .submenu {
+  display: flex;
+}
+.language-dropdown .submenu .menu-item {
+  text-align: left;
+}
+</style>
+
+<script>
+// 🌐 فتح اللغة بالضغط أو hover
+const langMenu = document.getElementById('lang-menu');
+langMenu.addEventListener('click', e => {
+  e.stopPropagation();
+  langMenu.classList.toggle('active');
+});
+// إغلاق القائمة عند النقر خارجها
+document.addEventListener('click', e => {
+  if (!langMenu.contains(e.target)) {
+    langMenu.classList.remove('active');
+  }
+});
+// 🔔 Popup Notification
+function showPopup(message) {
+  const popup = document.getElementById('popup');
+  popup.textContent = message;
+  popup.classList.add('show');
+  // يختفي بعد 6 ثوانٍ
+  setTimeout(() => popup.classList.remove('show'), 6000);
+}
+
+// 🧠 الترجمة حسب اللغة المختارة
+const i18n_popup = {
+  ar: "✨ تمت إضافة اختيار لغة للموقع!",
+  en: "✨ Language selection added to the site!"
+};
+
+// 🔄 عرض الإشعار عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', () => {
+  const lang = localStorage.getItem('lang') || 'ar';
+  showPopup(i18n_popup[lang]);
+});
+
+</script>
+
+</div>
+<div class="ton-snow"></div>
+
+<div class="wave-bg">
+  <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="rgba(0, 140, 255, 0.18)" d="M0,96L60,117.3C120,139,240,181,360,170.7C480,160,600,96,720,101.3C840,107,960,181,1080,208C1200,235,1320,213,1380,202.7L1440,192L1440,320L0,320Z"></path>
+  </svg>
+</div>
+<div class="wave-bg">
+  <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="rgba(0, 140, 255, 0.18)" d="M0,96L60,117.3C120,139,240,181,360,170.7C480,160,600,96,720,101.3C840,107,960,181,1080,208C1200,235,1320,213,1380,202.7L1440,192L1440,320L0,320Z"></path>
+  </svg>
+</div>
+<div class="overlay"></div>
+<audio id="click" preload="auto">
+  <source src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg" type="audio/ogg">
+</audio>
+<div class="wrapper">
+  <section class="content" id="main">
+    <div class="logo-wrap"><img src="logo.png" alt="logo"></div>
+    <h1 data-i18n="title">سوبر تون - Super Ton</h1>
+    <h2 data-i18n="subtitle">سوبر للبيع والشراء عبر وسيط معتمد لضمان حق الطرفين <img src="shield.png" class="icon"></h2>
+    <button class="btn" onclick="show('trust')" data-i18n="buttons.trust">ثقة سوبر تون</button>
+    <button class="btn" onclick="show('channels')" data-i18n="buttons.channels">قنوات وجروبات سوبر تون</button>
+    <button class="btn" onclick="show('brokers')" data-i18n="buttons.brokers">الوسطاء</button>
+    <button class="btn" onclick="show('owners')" data-i18n="buttons.owners">المالكين</button>
+  </section>
+  <section class="content" id="trust" hidden>
+    <h1 data-i18n="sections.trust">قنوات الثقة</h1>
+    <a class="btn" href="https://t.me/trust_tooon" target="_blank" data-i18n="links.trust1">قناة ثقة السوبر</a>
+    <a class="btn" href="https://t.me/SuperTon_Reviews" target="_blank" data-i18n="links.trust2">قناة تقييم السوبر</a>
+    <button class="btn" onclick="show('main')" data-i18n="buttons.back">رجوع</button>
+  </section>
+  <section class="content" id="channels" hidden>
+    <h1 data-i18n="sections.channels">قنوات وجروبات سوبر تون</h1>
+    <button class="btn" onclick="show('superton')" data-i18n="sections.superton">سوبر تون</button>
+    <button class="btn" onclick="show('auction')" data-i18n="sections.auction">المزاد</button>
+    <button class="btn" onclick="show('gifts')" data-i18n="sections.gifts">قنوات الهدايا</button>
+    <a class="btn" href="https://t.me/Ton_coins1" target="_blank" data-i18n="links.coins">جروب العملات</a>
+    <a class="btn" href="https://t.me/N_S_BB" target="_blank" data-i18n="links.scammers">قناة النصابين</a>
+    <button class="btn" onclick="show('main')" data-i18n="buttons.back">رجوع</button>
+  </section>
+  <section class="content" id="superton" hidden>
+    <h1 data-i18n="sections.superton">سوبر تون</h1>
+    <a class="btn" href="https://t.me/Tooon_Ch" target="_blank" data-i18n="links.super_channel">قناة سوبر تون</a>
+    <a class="btn" href="https://t.me/Super_Tooon" target="_blank" data-i18n="links.super_group">جروب سوبر تون</a>
+    <button class="btn" onclick="show('channels')" data-i18n="buttons.back">رجوع</button>
+  </section>
+  <section class="content" id="auction" hidden>
+    <h1 data-i18n="sections.auction">المزاد</h1>
+    <a class="btn" href="https://t.me/Tooon_Auction" target="_blank" data-i18n="links.auction_channel">قناة المزاد</a>
+    <a class="btn" href="https://t.me/AuctionTonGroup" target="_blank" data-i18n="links.auction_group">جروب المزاد</a>
+    <button class="btn" onclick="show('channels')" data-i18n="buttons.back">رجوع</button>
+  </section>
+  <section class="content" id="gifts" hidden>
+    <h1 data-i18n="sections.gifts">قنوات الهدايا</h1>
+    <a class="btn" href="https://t.me/recalegift" target="_blank" data-i18n="links.gifts_buyback">قناة إعادة شراء الهدايا</a>
+    <a class="btn" href="https://t.me/gift_toon" target="_blank" data-i18n="links.gifts_news">قناة أخبار الهدايا</a>
+    <button class="btn" onclick="show('channels')" data-i18n="buttons.back">رجوع</button>
+  </section>
+  <section class="content" id="brokers" hidden>
+    <h1 data-i18n="sections.brokers">الوسطاء المعتمدون</h1>
+    <a class="btn" href="https://t.me/k_h_a" target="_blank">Khaled Flavio</a>
+    <a class="btn" href="https://t.me/g_j_j" target="_blank">Mohamed</a>
+    <a class="btn" href="https://t.me/n_v_n" target="_blank">Rayan</a>
+    <a class="btn" href="https://t.me/d_4_5" target="_blank">King</a>
+    <a class="btn" href="https://t.me/v_p_v" target="_blank">Leo</a>
+    <a class="btn" href="https://t.me/uuruuc" target="_blank">Mody</a>
+    <a class="btn" href="https://t.me/i_seif" target="_blank">Seif</a>
+    <a class="btn" href="https://t.me/abuhas8BP" target="_blank">Abu Hassan</a>
+    <button class="btn" onclick="show('main')" data-i18n="buttons.back">رجوع</button>
+  </section>
+  <section class="content" id="owners" hidden>
+    <h1 data-i18n="sections.owners">المالكين</h1>
+    <a class="btn" href="https://t.me/s_r_x" target="_blank">Mazen Yasser</a>
+    <a class="btn" href="https://t.me/m_eee" target="_blank">Mahmoud Drak</a>
+    <button class="btn" onclick="show('main')" data-i18n="buttons.back">رجوع</button>
+  </section>
+</div>
+
+<div class="footer">
+  <span data-i18n="footer">© 2025 Super Ton - جميع الحقوق محفوظة</span>
+</div>
+<script>
+// ====== صوت النقر ======
+const click = document.getElementById('click');
+function play(){
+  click.currentTime = 0;
+  click.play();
+}
+
+// ====== إظهار الأقسام ======
+function show(id){
+  document.querySelectorAll('.content').forEach(s => s.hidden = true);
+  document.getElementById(id).hidden = false;
+  play();
+  document.querySelector('.wrapper').scrollTo({top:0, behavior:'smooth'});
+}
+
+// ====== تبديل النمط الليلي ======
+function toggleMode(){
+  document.body.classList.toggle('dark');
+  updateModeLabel();
+  play();
+}
+
+// ====== i18n قاموس ======
+const i18n = {
+  ar: {
+    htmlLang: 'ar',
+    titleTag: 'سوبر تون - Super Ton',
+    title: 'سوبر تون - Super Ton',
+    subtitle: 'سوبر للبيع والشراء عبر وسيط معتمد لضمان حق الطرفين <img src="shield.png" class="icon">',
+    buttons: {
+      trust: 'ثقة سوبر تون',
+      channels: 'قنوات وجروبات سوبر تون',
+      brokers: 'الوسطاء',
+      owners: 'المالكين',
+      back: 'رجوع'
+    },
+    sections: {
+      trust: 'قنوات الثقة',
+      channels: 'قنوات وجروبات سوبر تون',
+      superton: 'سوبر تون',
+      auction: 'المزاد',
+      gifts: 'قنوات الهدايا',
+      brokers: 'الوسطاء المعتمدون',
+      owners: 'المالكين'
+    },
+    links: {
+      trust1: 'قناة ثقة السوبر',
+      trust2: 'قناة تقييم السوبر',
+      coins: 'جروب العملات',
+      scammers: 'قناة النصابين',
+      super_channel: 'قناة سوبر تون',
+      super_group: 'جروب سوبر تون',
+      auction_channel: 'قناة المزاد',
+      auction_group: 'جروب المزاد',
+      gifts_buyback: 'قناة إعادة شراء الهدايا',
+      gifts_news: 'قناة أخبار الهدايا'
+    },
+    menu: {
+      language: 'اللغة / Language',
+      dark: 'الوضع الليلي',
+      light: 'الوضع النهاري'
+    },
+    footer: '© 2025 Super Ton - جميع الحقوق محفوظة'
+  },
+  en: {
+    htmlLang: 'en',
+    titleTag: 'Super Ton',
+    title: 'Super Ton',
+    subtitle: 'Buy & sell via a certified escrow to protect both parties <img src="shield.png" class="icon">',
+    buttons: {
+      trust: 'Super Ton Trust',
+      channels: 'Super Ton Channels & Groups',
+      brokers: 'Brokers',
+      owners: 'Owners',
+      back: 'Back'
+    },
+    sections: {
+      trust: 'Trust Channels',
+      channels: 'Super Ton Channels & Groups',
+      superton: 'Super Ton',
+      auction: 'Auctions',
+      gifts: 'Gifts Channels',
+      brokers: 'Certified Brokers',
+      owners: 'Owners'
+    },
+    links: {
+      trust1: 'Super Trust Channel',
+      trust2: 'Super Reviews Channel',
+      coins: 'Coins Group',
+      scammers: 'Scammers Watchlist',
+      super_channel: 'Super Ton Channel',
+      super_group: 'Super Ton Group',
+      auction_channel: 'Auction Channel',
+      auction_group: 'Auction Group',
+      gifts_buyback: 'Gifts Buyback Channel',
+      gifts_news: 'Gifts News Channel'
+    },
+    menu: {
+      language: 'Language',
+      dark: 'Dark Mode',
+      light: 'Light Mode'
+    },
+    footer: '© 2025 Super Ton – All rights reserved'
+  }
+};
+
+// ====== تطبيق اللغة على العناصر ======
+function applyLanguage(lang){
+  const dict = i18n[lang] || i18n.ar;
+  // تحديث العنوان في التبويب ولغة html
+  document.title = dict.titleTag;
+  document.documentElement.lang = dict.htmlLang;
+  // تحديث كل العناصر ذات data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const path = el.getAttribute('data-i18n');
+    const value = path.split('.').reduce((acc, k) => acc && acc[k], dict);
+    if (value) {
+      // لو العنصر يحوي HTML (مثل subtitle مع صورة الدرع)
+      if (value.includes('<img')) {
+        el.innerHTML = value;
+      } else {
+        el.textContent = value;
+      }
+    }
+  });
+  // تحديث نص زر النمط حسب الحالة الحالية
+  updateModeLabel();
+}
+
+// ====== تحديث نص زر النمط بحسب الوضع الحالي ======
+function updateModeLabel(){
+  const btn = document.querySelector('.mode-toggle');
+  if (!btn) return;
+  const lang = getLang();
+  const isDark = document.body.classList.contains('dark');
+  const label = isDark ? i18n[lang].menu.light : i18n[lang].menu.dark;
+  btn.textContent = label;
+}
+
+// ====== تخزين وقراءة اللغة ======
+function setLang(lang){
+  localStorage.setItem('lang', lang);
+  applyLanguage(lang);
+  play();
+}
+function getLang(){
+  return localStorage.getItem('lang') || 'ar';
+}
+
+// ====== بدء التشغيل ======
+document.addEventListener('DOMContentLoaded', () => {
+  // تفعيل القائمة
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menu = document.getElementById('menu');
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+      menu.classList.remove('active');
+    }
+  });
+
+  // أزرار اللغة
+  document.getElementById('lang-ar').addEventListener('click', () => setLang('ar'));
+  document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
+
+  // زر الوضع الليلي
+  document.querySelector('.mode-toggle').addEventListener('click', toggleMode);
+
+  // تطبيق اللغة المحفوظة
+  applyLanguage(getLang());
+});
+
+// ====== تأثير الثلج (TON) ======
+const tonSnowContainer = document.querySelector('.ton-snow');
+function createTonParticle() {
+  const ton = document.createElement('div');
+  ton.classList.add('ton');
+  ton.textContent = '💎';
+  ton.style.left = Math.random() * 100 + 'vw';
+  ton.style.animationDuration = 6 + Math.random() * 6 + 's';
+  ton.style.opacity = Math.random() * 0.6 + 0.3;
+  ton.style.fontSize = (Math.random() * 16 + 12) + 'px';
+  tonSnowContainer.appendChild(ton);
+  setTimeout(() => ton.remove(), 12000);
+}
+setInterval(createTonParticle, 400);
+</script>
+<script>
+  const aboutBtn   = document.getElementById("about-btn");
+  const aboutPopup = document.getElementById("about-popup");
+  const closeAbout = document.getElementById("close-about");
+
+  // فتح النافذة + صوت
+  aboutBtn.addEventListener("click", () => {
+    play();                        // ✅ شغّل الصوت هنا
+    aboutPopup.style.display = "flex";
+  });
+
+  // إغلاق بالزر + صوت
+  closeAbout.addEventListener("click", () => {
+    play();                        // ✅ وهنا كمان
+    aboutPopup.style.display = "none";
+  });
+
+  // إغلاق عند الضغط خارج المربع + صوت
+  window.addEventListener("click", (e) => {
+    if (e.target === aboutPopup) {
+      play();                      // ✅ وهنا
+      aboutPopup.style.display = "none";
+    }
+  });
+</script>
+<script>
+  const introSound = new Audio('sound.mp3');
+  introSound.volume = 0.25;
+  introSound.loop = true;
+
+  let introStarted = false;
+  function startIntro() {
+    if (introStarted) return;
+    introStarted = true;
+    introSound.play().catch(() => {});
+  }
+
+  window.addEventListener('pointerdown', startIntro, { once: true });
+  window.addEventListener('keydown', startIntro, { once: true });
+  const _origShow = show;
+  show = function(id) {
+    startIntro();
+    _origShow(id);
+  };
+
+</script>
+</body>
+</html>
